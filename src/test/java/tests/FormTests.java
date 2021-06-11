@@ -15,7 +15,7 @@ public class FormTests {
     String firstName = faker.name().firstName(),
             lastName = faker.name().lastName(),
             email = faker.internet().emailAddress(),
-            gender = "Female",
+            gender = "Male",
             phoneNumber = faker.phoneNumber().subscriberNumber(10),
             month = "July",
             year = "1993",
