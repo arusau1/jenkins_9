@@ -1,9 +1,6 @@
 package tests;
 
 import com.github.javafaker.Faker;
-
-import com.codeborne.selenide.Configuration;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import static io.qameta.allure.Allure.step;
@@ -38,35 +35,43 @@ public class FormTests extends TestBase {
             registrationPage.openPage();
         });
 
-        step("Fill students registration form", () -> {
-            step("Fill common data", () -> {
-                registrationPage.typeFirstName(firstName);
-                registrationPage.typeLastName(lastName);
-                registrationPage.typeEmail(email);
-                registrationPage.chooseGender(gender);
-                registrationPage.typeUserNumber(phoneNumber);
-            });
-            step("Set date", () -> {
-                registrationPage.chooseDateOfBirth(day, month, year);
-            });
-            step("Set subjects", () -> {
-                registrationPage.chooseSubject(subject);
-            });
-            step("Set hobbies", () -> {
-                registrationPage.chooseHobby(hobby);
-            });
-            step("Upload image", () -> {
-                    registrationPage.upLoadPicture(pathname);
-            });
-            step("Set address", () -> {
-        registrationPage.typeAddress(address);
-        registrationPage.chooseState(state);
-        registrationPage.chooseCity(city);
-            });
+        step("Fill common data", () -> {
+            registrationPage.typeFirstName(firstName);
+            registrationPage.typeLastName(lastName);
+            registrationPage.typeEmail(email);
+            registrationPage.chooseGender(gender);
+            registrationPage.typeUserNumber(phoneNumber);
+        });
+
+        step("Set date", () -> {
+            registrationPage.chooseDateOfBirth(day, month, year);
+        });
+
+        step("Set subjects", () -> {
+            registrationPage.chooseSubject(subject);
+        });
+
+        step("Set hobbies", () -> {
+            registrationPage.chooseHobby(hobby);
+        });
+
+        step("Upload image", () -> {
+            registrationPage.upLoadPicture(pathname);
+        });
+
+        step("Set address", () -> {
+            registrationPage.typeAddress(address);
+            registrationPage.chooseState(state);
+            registrationPage.chooseCity(city);
+        });
+
+        step("submit form", () -> {
+            registrationPage.submitForm();
+        });
 
         step("Verify successful form submit", () -> {
-        registrationPage.submitForm();
-        registrationPage.checkRegistrationResults(firstName, lastName, email, gender, phoneNumber, day, month, year, subject, hobby, picture, address, state, city);
+            registrationPage.checkRegistrationResults(firstName, lastName, email, gender, phoneNumber, day, month, year, subject, hobby, picture, address, state, city);
         });
-        });
-}}
+
+    }
+}

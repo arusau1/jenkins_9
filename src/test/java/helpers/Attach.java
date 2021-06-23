@@ -5,11 +5,11 @@ import io.qameta.allure.Allure;
 import io.qameta.allure.Attachment;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
@@ -41,13 +41,6 @@ public class Attach {
         );
     }
 
-    //    @Attachment(value = "Video", type = "text/html", fileExtension = ".html")
-//    public static String addVideo(String sessionId) {
-//        return "<html><body><video width='100%' height='100%' controls autoplay><source src='"
-//                + getVideoUrl(sessionId)
-//                + "' type='video/mp4'></video></body></html>";
-//    }
-//
     public static void addVideo(String sessionId) {
         URL videoUrl = getVideoUrl(sessionId);
         if (videoUrl != null) {
