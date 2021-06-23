@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 
 import pages.RegistrationPage;
 
-public class FormTests {
+public class FormTests extends TestBase {
 
     Faker faker = new Faker();
 
@@ -29,12 +29,6 @@ public class FormTests {
             city = "Delhi";
 
     RegistrationPage registrationPage = new RegistrationPage();
-
-    @BeforeAll
-    static void setUpConfig() {
-        Configuration.browser = "chrome";
-        Configuration.startMaximized = true;
-    }
 
     @Test
     void successSubmitFormTest() {
