@@ -22,7 +22,7 @@ public class FormTests {
             day = "26",
             subject = "Computer Science",
             hobby = "Music",
-            pathname = "src/test/java/resources/1.jpeg",
+            pathname = "src/test/resources/1.jpeg",
             picture = "1.jpeg",
             address = faker.address().fullAddress(),
             state = "NCR",
